@@ -27,7 +27,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="w-full relative pt-20 md:pt-24 lg:pt-24">
+    <header className="w-full relative pt-26 md:pt-24 lg:pt-24">
       {/* Hero background */}
       <div className="relative w-full h-auto">
         <Image
@@ -54,7 +54,7 @@ const Header = () => {
         ref={titleRef}
         className="absolute inset-0 flex flex-col md:flex-row items-center justify-center text-center md:text-left px-6 md:px-12 lg:px-24"
       >
-        <h1 className="profile-title text-[clamp(2.5rem,6vw,7rem)] md:text-[clamp(4rem,8vw,9rem)] font-serif text-white leading-tight">
+        <h1 className="profile-title text-[clamp(2.75rem,6vw,7rem)] md:text-[clamp(4rem,8vw,9rem)] font-serif text-white leading-tight">
           Beck&nbsp;Kanno
         </h1>
 
@@ -63,7 +63,7 @@ const Header = () => {
           style={{ transformOrigin: "left" }}
         />
 
-        <h1 className="profile-title italic text-[clamp(2.5rem,6vw,7rem)] md:text-[clamp(4rem,8vw,9rem)] font-serif text-white leading-tight">
+        <h1 className="profile-title italic text-[clamp(2.75rem,6vw,7rem)] md:text-[clamp(4rem,8vw,9rem)] font-serif text-white leading-tight">
           Product&nbsp;Designer.
         </h1>
       </div>
