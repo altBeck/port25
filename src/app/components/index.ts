@@ -1,0 +1,10 @@
+export { default as Header } from './Header'; 
+export { default as Navbar } from './NavBar';
+export { default as Carousel } from './Carousel';
+export { default as About } from './About';
+export { default as Work } from './Work';
+export { default as Capabilities } from './Capabilities';
+export { default as ProjectDesc } from './ProjectDesc';
+export { default as ProjectNavbar } from './ProjectNavbar';
+export { default as CaseStudyLayout } from './CaseStudyLayout';
+export { default as CloseButton } from './CloseButton';
