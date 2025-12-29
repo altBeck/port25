@@ -62,13 +62,13 @@ const Capabilities = () => {
         Capabilities
       </h1>
 
-      <div className="flex flex-wrap gap-3 md:gap-5 uppercase text-xs md:text-lg font-medium">
+      <div className="flex flex-wrap gap-3 md:gap-5 uppercase text-[13px] md:text-lg font-medium">
         {skills.map((skill) => (
           <span
             key={skill}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
-            className="cursor-pointer py-2 px-4 md:py-4 md:px-8 rounded-full bg-[#FFFAFA]/10 text-[#FFFAFA] border border-white/5 whitespace-nowrap"
+            className="cursor-pointer py-4 px-6 md:py-4 md:px-8 rounded-full bg-[#FFFAFA]/10 text-[#FFFAFA] border border-white/5 whitespace-nowrap"
           >
             {skill}
           </span>

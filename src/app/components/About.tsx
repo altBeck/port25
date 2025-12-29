@@ -10,7 +10,16 @@ const About = () => {
         <div className="flex-1">
           <h1 className="mb-8 italic text-[#FFFAFA]">About Me</h1>
 
-          <p className="text-[#FFFAFA] text-2xl md:text-3xl leading-snug max-w-2xl font-manrope">
+          <Image
+            src="/assets/images/profile.png"
+            alt="Profile photo"
+            width={200}
+            height={200}
+            className="block md:hidden object-cover w-[200px] h-[200px] md:w-[220px] md:h-[220px] mb-8"
+            priority
+          />
+
+          <p className="text-[#FFFAFA] text-xl md:text-3xl leading-snug max-w-2xl font-manrope">
             I&apos;m a Product Designer specializing in UX, UI, and product strategy.
             I&apos;ve worked across fintech, trade finance SaaS, legal-tech,
             commerce, gaming, edutainment, and healthcare, helping startups and
@@ -19,13 +28,13 @@ const About = () => {
           </p>
         </div>
         {/* Right: Profile Image */}
-        <div className="flex-shrink-0 flex justify-center md:justify-end">
+        <div className="shrink-0 md:flex justify-center md:justify-end hidden">
           <Image
             src="/assets/images/profile.png"
             alt="Profile photo"
             width={200}
             height={200}
-            className="rounded-[2rem] object-cover w-[200px] h-[200px] md:w-[220px] md:h-[220px]"
+            className="rounded-4xl object-cover w-[200px] h-[200px] md:w-[220px] md:h-[220px]"
             priority
           />
         </div>
@@ -33,7 +42,7 @@ const About = () => {
       {/* Divider */}
       <div className="border-t border-white/10 my-18 " />
       {/* Bottom: Two Columns */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-white text-base md:text-lg font-manrope md:mr-64">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-white text-lg font-manrope md:mr-64">
         <p className="text-[#E9E9E8]/80">
           I work closely with early-stage startups to shape their product
           direction from the ground up, conducting UX audits, user research, and

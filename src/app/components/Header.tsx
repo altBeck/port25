@@ -27,7 +27,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="w-full relative pt-26 md:pt-24 lg:pt-24">
+    <header className="w-full relative pt-29 md:pt-24 lg:pt-24">
       {/* Hero background */}
       <div className="relative w-full h-auto">
         <Image

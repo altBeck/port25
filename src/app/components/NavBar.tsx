@@ -64,11 +64,11 @@ const NavBar = () => {
   return (
     <>
       <div
-        className={`w-full h-20 top-0 left-0 z-50 transition-transform duration-300 ${
+        className={`w-full top-0 left-0 z-50 transition-transform duration-300 ${
           visible ? "translate-y-0" : "-translate-y-full"
         } fixed`}
       >
-        <div className="fixed top-0 left-0 w-full z-50 flex items-center py-10 bg-[#041D26] px-6">
+        <div className="w-full flex items-center py-10 bg-[#041D26] px-6">
           {/* Left: Logo */}
           <div className="z-10">
             <Link href="/" scroll={true}>
@@ -130,7 +130,7 @@ const NavBar = () => {
           </div>
 
           <div className="ml-auto lg:hidden">
-            <button onClick={() => setOpen(o => !o)}>
+            <button className="p-2" onClick={() => setOpen((o) => !o)}>
               {open ? <CloseIcon /> : <MenuIcon />}
             </button>
           </div>

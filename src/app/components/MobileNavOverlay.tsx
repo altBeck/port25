@@ -44,11 +44,11 @@ export default function MobileNavOverlay({ open, onClose }: Props) {
       aria-modal="true"
     >
       {/* Dark panel (top half like your design) */}
-      <div className="absolute inset-0 bg-[#041D26] h-114" />
+      <div className="absolute inset-0 bg-[#041D26] h-120" />
 
       <div className="relative h-full w-full overflow-auto">
         <div>
-          <div className="flex items-center justify-between p-6">
+          <div className="flex items-center justify-between py-10 px-5">
             <Link href="/" scroll onClick={onClose}>
               <Image src="/assets/icons/name.svg" alt="Beck Kanno" width={199} height={20} />
             </Link>
