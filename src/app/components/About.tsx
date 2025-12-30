@@ -4,7 +4,7 @@ import Capabilities from "./Capabilities";
 
 const About = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center p-5 lg:p-16">
+    <section className="w-full min-h-screen flex flex-col justify-center p-5 lg:p-16 px-8 md:px-16 pb-12 md:pb-16 pt-8 xl:max-w-350 mx-auto">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between">
         {/* Left: Text */}
         <div className="flex-1">
@@ -42,7 +42,7 @@ const About = () => {
       {/* Divider */}
       <div className="border-t border-white/10 my-18 " />
       {/* Bottom: Two Columns */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-white text-lg font-manrope md:mr-64">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-white text-lg font-manrope lg:mr-64">
         <p className="text-[#E9E9E8]/80">
           I work closely with early-stage startups to shape their product
           direction from the ground up, conducting UX audits, user research, and

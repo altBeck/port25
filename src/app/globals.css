@@ -17,6 +17,10 @@
   h1 {
     @apply text-[108px] font-serif tracking-[-0.015em];
   }
+
+  h4 {
+    @apply text-[80px] font-serif tracking-[-0.015em];
+  }
 }
 
 
