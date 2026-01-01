@@ -59,7 +59,7 @@ const Work = () => {
               {/* content section (left column content) */}
               <div className="flex flex-col xl:flex-row gap-6 md:gap-8 lg:gap-12 w-full">
                 <div className="flex-1 flex flex-col">
-                  <div className="bg-[#083C45] w-full pt-5 md:pt-6 rounded-3xl">
+                  <div className="bg-[#083C45] w-full pt-5 md:pt-6 rounded-3xl z-10">
                     <div className="px-5 md:px-6 pb-5 md:pb-6">
                       <p className="text-sm md:text-base lg:text-xl font-manrope pb-3 md:pb-4 text-[#FFFAFA]/90 leading-relaxed">
                         Frequent commuters faced fractured booking and poor
@@ -151,7 +151,7 @@ const Work = () => {
               {/* content section (left column content) */}
               <div className="flex flex-col xl:flex-row gap-6 md:gap-8 lg:gap-12 w-full">
                 <div className="flex-1 flex flex-col">
-                  <div className="bg-[#302463] w-full pt-5 md:pt-6 rounded-3xl">
+                  <div className="bg-[#302463] w-full pt-5 md:pt-6 rounded-3xl z-10">
                     <div className="px-5 md:px-6 pb-5 md:pb-6">
                       <p className="text-sm md:text-base lg:text-xl font-manrope pb-3 md:pb-4 text-[#FFFAFA]/90 leading-relaxed">
                         Frequent commuters faced fractured booking and poor

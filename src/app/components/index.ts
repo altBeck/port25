@@ -8,3 +8,4 @@ export { default as ProjectDesc } from './ProjectDesc';
 export { default as ProjectNavbar } from './ProjectNavbar';
 export { default as CaseStudyLayout } from './CaseStudyLayout';
 export { default as CloseButton } from './CloseButton';
+export { default as ProjectFooter } from './ProjectFooter';

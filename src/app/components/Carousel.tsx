@@ -100,7 +100,11 @@ const Carousel = () => {
                 maxWidth: "100%",
               }}
               className="object-contain snap-center"
-              onLoadingComplete={idx === 0 ? measureFirstImage : undefined}
+              onLoad={() => {
+                if (idx === 0) {
+                  measureFirstImage();
+                }
+              }}
             />
           </div>
         ))}
