@@ -58,7 +58,11 @@ const Capabilities = () => {
 
   return (
     <div className="flex flex-col gap-6" ref={containerRef}>
-      <h1 className="mb-4 italic text-4xl md:text-5xl text-[#FFFAFA]">
+      <h1 className="mb-8 text-[3.25rem] md:hidden italic text-[#FFFAFA]">
+        Capabilities
+      </h1>
+
+      <h1 className="mb-12 md:block hidden md:mb-16 italic text-[#FFFAFA]">
         Capabilities
       </h1>
 

@@ -8,7 +8,13 @@ const About = () => {
       <div className="flex flex-col md:flex-row md:items-start md:justify-between">
         {/* Left: Text */}
         <div className="flex-1">
-          <h1 className="mb-8 italic text-[#FFFAFA]">About Me</h1>
+        <h1 className="mb-8 text-[3.25rem] md:hidden italic text-[#FFFAFA]">
+          About Me
+        </h1>
+
+        <h1 className="mb-12 md:block hidden md:mb-16 italic text-[#FFFAFA]">
+          About Me
+        </h1>
 
           <Image
             src="/assets/images/profile.png"
