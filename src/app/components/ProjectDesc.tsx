@@ -40,7 +40,7 @@ return (
       aria-labelledby="project-desc-title"
   >
     
-    <div className="md:fixed md:top-20 md:h-screen bg-[#F6F6F6]  md:flex md:flex-col overflow-hidden">
+    <div className="w-full md:w-[390px] md:fixed md:top-20 md:h-screen bg-[#F6F6F6]  md:flex md:flex-col overflow-hidden">
       
       <div className="p-5 md:p-[1.875em] md:flex-1">
         <div className="flex flex-row justify-between">

@@ -96,18 +96,18 @@ const NavBar = () => {
             <ul className="flex space-x-3 text-base uppercase font-manrope font-medium">
               <li>
                 <NavLink
-                  href="#about"
-                  className="cursor-pointer py-2 rounded-full hover:text-white/50"
-                >
-                  About,
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
                   href="#work"
                   className="cursor-pointer py-2 rounded-full hover:text-white/50"
                 >
                   Work,
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  href="#about"
+                  className="cursor-pointer py-2 rounded-full hover:text-white/50"
+                >
+                  About,
                 </NavLink>
               </li>
               <li>

@@ -20,11 +20,11 @@ type Props = {
 };
 
 const defaultProjects: ProjectItem[] = [
-  { id: "puplar", name: "PUPLAR", domain: "FINTECH, CRYPTO", platform: "iOS, ANDROID", problemType: "TRUST, MONEY MANAGEMENT", year: 2024, image: "/assets/images/puplar-mobile.png" },
-  { id: "japa", name: "JAPA", domain: "MIGRATION, EDUTAINMENT", platform: "iOS, ANDROID", problemType: "COMPLEX IMMIGRATION FLOWS", year: 2024, image: "/assets/images/japa-mobile.png" },
-  { id: "dash", name: "DASH", domain: "MOBILITY, COMMUTE", platform: "iOS, ANDROID, WEB", problemType: "POOR RIDE VISIBILITY & SCHEDULING", year: 2025, image: "/assets/images/dash-mobile.png" },
-  { id: "akawo", name: "AKAWO", domain: "BNPL COMMERCE", platform: "iOS, ANDROID, WEB", problemType: "CHECK OUT FRICTION, SELLER DASHBOARD", year: 2025, image: "/assets/images/akawo-mobile.png" },
-  { id: "pluto", name: "PLUTO", domain: "PERSONAL FINANCE ASSISTANT", platform: "MOBILE, WEB", problemType: "WEAK BUDGETS, NOISY RECEIPTS", year: "N/A", image: "/assets/images/pluto-mobile.png" },
+  { id: "puplar", name: "PUPLAR", domain: "FINTECH, CRYPTO", platform: "iOS, ANDROID", problemType: "TRUST, MONEY MANAGEMENT", year: 2025, image: "/assets/images/projects/puplar-mobile.png" },
+  { id: "japa", name: "JAPA", domain: "MIGRATION, EDUTAINMENT", platform: "iOS, ANDROID", problemType: "COMPLEX IMMIGRATION FLOWS", year: 2024, image: "/assets/images/projects/japa-mobile.png" },
+  { id: "dash", name: "DASH", domain: "MOBILITY, COMMUTE", platform: "iOS, ANDROID, WEB", problemType: "POOR RIDE VISIBILITY & SCHEDULING", year: 2025, image: "/assets/images/projects/dash-mobile.png" },
+  { id: "akawo", name: "AKAWO", domain: "BNPL COMMERCE", platform: "iOS, ANDROID, WEB", problemType: "CHECK OUT FRICTION, SELLER DASHBOARD", year: 2025, image: "/assets/images/projects/akawo-mobile.png" },
+  { id: "pluto", name: "PLUTO", domain: "PERSONAL FINANCE ASSISTANT", platform: "MOBILE, WEB", problemType: "WEAK BUDGETS, NOISY RECEIPTS", year: "N/A", image: "/assets/images/projects/pluto-mobile.png" },
 ];
 
 export default function ProjectFooter({ projects = defaultProjects, activeProjectId = "puplar" }: Props) {
@@ -33,17 +33,17 @@ export default function ProjectFooter({ projects = defaultProjects, activeProjec
     <footer className="w-full bg-[#0B1214] text-[#D1D5D6] py-16 md:py-24 font-sans">
       
       {/* 1. Header */}
-      <div className="px-6 md:px-12 mb-8">
-        <h2 className="font-serif italic text-4xl md:text-5xl text-white font-light tracking-wide">
+      <div className="px-5 md:px-12 mb-8">
+        <h1 className="font-serif italic text-5xl text-white font-light tracking-tight">
           Check out more projects
-        </h2>
+        </h1>
       </div>
 
       {/* 2. Desktop Table */}
       <div className="hidden md:block w-full px-6 md:px-12">
         <div className="w-full border-t border-[#1F292B]">
           {/* Header Row */}
-          <div className="grid grid-cols-12 gap-4 py-6 text-xs font-semibold tracking-widest text-[#5F6A6C] uppercase">
+          <div className="grid grid-cols-12 gap-4 py-6 text-xs font-semibold tracking-widest text-[#fcfcfc] uppercase">
             <div className="col-span-2">Project Name</div>
             <div className="col-span-3">Domain</div>
             <div className="col-span-2">Platform</div>
@@ -57,19 +57,19 @@ export default function ProjectFooter({ projects = defaultProjects, activeProjec
               const isActive = p.id === activeProjectId;
               return (
                 <Link 
-                  href={`/projects/${p.id}`} 
+                  href={`/p/${p.id}`} 
                   key={p.id}
                   className={`
                     group grid grid-cols-12 gap-4 py-6 px-4 -mx-4 items-center border-t border-[#1F292B] transition-all duration-200
                     ${isActive ? "bg-[#111A1C]" : "hover:bg-[#111A1C]"}
                   `}
                 >
-                  <div className={`col-span-2 text-base font-semibold tracking-wide ${isActive ? "text-white" : "text-[#949A9C] group-hover:text-white"}`}>
+                  <div className={`col-span-2 text-sm font-semibold tracking-wide ${isActive ? "text-white" : "text-[#949A9C] group-hover:text-white"}`}>
                     {p.name}
                   </div>
-                  <div className="col-span-3 text-[#7A8385] text-xs uppercase tracking-wide font-medium">{p.domain}</div>
-                  <div className="col-span-2 text-[#7A8385] text-xs uppercase tracking-wide font-medium">{p.platform}</div>
-                  <div className="col-span-4 text-[#7A8385] text-xs uppercase tracking-wide font-medium">{p.problemType}</div>
+                  <div className="col-span-3 text-[#7A8385] text-xs uppercase font-medium">{p.domain}</div>
+                  <div className="col-span-2 text-[#7A8385] text-xs uppercase font-medium">{p.platform}</div>
+                  <div className="col-span-4 text-[#7A8385] text-xs uppercase font-medium">{p.problemType}</div>
                   <div className="col-span-1 text-[#7A8385] text-xs text-right font-medium">{p.year}</div>
                 </Link>
               );
@@ -86,7 +86,7 @@ export default function ProjectFooter({ projects = defaultProjects, activeProjec
 
       {/* 4. Bottom Contact Info */}
       <div className="mt-16 md:mt-24 px-6 md:px-12">
-        <div className="max-w-2xl">
+        <div>
           <p className="text-xl md:text-2xl text-[#C4C9CA] leading-relaxed mb-10 font-light">
             Have a project in mind you want to talk about? <br className="hidden md:block" />
             Shoot me an email and we can work something out.
@@ -100,20 +100,50 @@ export default function ProjectFooter({ projects = defaultProjects, activeProjec
               
               <a href="mailto:drkannobeck@gmail.com" className="text-white font-semibold text-base flex items-center gap-2 hover:text-[#4CC9F0] transition-colors">
                 drkannobeck@gmail.com
-                <span className="opacity-50 hover:opacity-100">📋</span>
+                <Image
+                  src="/assets/icons/copy.svg"
+                  alt="copy icon"
+                  width={16}
+                  height={16}
+                />
               </a>
             </div>
 
             <div className="w-full pt-8 mt-8 border-t border-[#1F292B] flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs text-[#5F6A6C] gap-4">
-              <div className="flex flex-col gap-2">
+              <div className="flex w-full flex-col gap-5">
                 <span>Made with sleepless nights and procrastination</span>
-                <div className="flex items-center gap-2 opacity-60">
+                <div className="flex items-center gap-2 opacity-80">
                     <span>Designed using</span>
+                    
                     <div className="flex gap-2">
-                         {/* Simple circles for tool icons */}
-                         <div className="w-4 h-4 rounded-full bg-gray-600"></div>
-                         <div className="w-4 h-4 rounded-full bg-gray-600"></div>
-                         <div className="w-4 h-4 rounded-full bg-gray-600"></div>
+                      {/* Simple circles for tool icons */}
+                      <Image
+                        src="/assets/icons/figma.svg"
+                        alt="figma icon"
+                        width={20}
+                        height={20}
+                      />
+
+                      <Image
+                        src="/assets/icons/nextjs.svg"
+                        alt="nextjs icon"
+                        width={20}
+                        height={20}
+                      />
+
+                      <Image
+                        src="/assets/icons/tailwind.svg"
+                        alt="tailwind icon"
+                        width={20}
+                        height={20}
+                      />
+
+                      <Image
+                        src="/assets/icons/cursor.svg"
+                        alt="cursor icon"
+                        width={20}
+                        height={20}
+                      />
                     </div>
                 </div>
               </div>
@@ -155,39 +185,40 @@ function MobileCarousel({ projects, activeProjectId }: { projects: ProjectItem[]
       <div 
         ref={scrollContainerRef}
         onScroll={handleScroll}
-        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide px-0" 
+        className="flex overflow-x-auto snap-x scroll-smooth snap-center snap-mandatory scrollbar-hide px-0" 
         style={{ scrollbarWidth: 'none' }}
       >
         {projects.map((p) => (
-          <div key={p.id} className="snap-center shrink-0 w-full px-4 flex justify-center">
+          <div key={p.id} className="@container snap-center shrink-0 w-full px-5 flex justify-center">
             {/* CARD Matches Design: Dark Teal Background, Image Top, Button Bottom */}
-            <div className="w-full max-w-[380px] bg-[#162629] rounded-[24px] overflow-hidden border border-[#233033] flex flex-col h-[520px]">
+            <div className="w-full max-w-[380px] bg-[#162629] rounded-[24px] overflow-hidden border border-[#233033] flex flex-col @2xs:h-[540px] @xs:h-[630px] transition-all duration-300">
                 
                 {/* Image Section */}
-                <div className="flex-1 relative bg-gradient-to-b from-[#1E3033] to-[#162629] flex items-end justify-center pt-8">
-                     {p.image ? (
-                        <div className="relative w-[80%] h-[90%]">
-                           <Image 
-                              src={p.image} 
-                              alt={p.name} 
-                              fill 
-                              className="object-contain object-bottom"
-                           />
-                        </div>
-                     ) : (
-                        <span className="text-white/20 mb-10">No Preview</span>
-                     )}
+                <div className="flex-1 relative bg-linear-to-b from-[#1E3033] to-[#162629] flex items-end justify-center">
+                  {p.image ? (
+                    <div className="relative w-full h-full">
+                      <Image 
+                        src={p.image} 
+                        alt={p.name} 
+                        fill 
+                        className="object-cover object-center"
+                        priority
+                      />
+                    </div>
+                  ) : (
+                    <span className="text-white/20 mb-10">No Preview</span>
+                  )}
                 </div>
 
                 {/* Info Section */}
-                <div className="px-6 py-6 bg-[#162629]">
+                <div className="p-5 py-6 bg-[#162629]">
                     <div className="flex justify-between items-baseline mb-1">
-                        <h3 className="text-white text-lg font-bold tracking-wide">{p.name}</h3>
-                        <span className="text-[#5F6A6C] text-xs font-medium">{p.year}</span>
+                      <h3 className="text-white text-lg font-bold tracking-wide">{p.name}</h3>
+                      <span className="text-[#5F6A6C] text-xs font-medium">{p.year}</span>
                     </div>
                     
                     <div className="flex gap-2 text-[10px] text-[#7A8385] uppercase tracking-wider mb-2 font-medium">
-                        <span>{p.domain}</span>
+                      <span>{p.domain}</span>
                     </div>
 
                     <p className="text-[#949A9C] text-xs leading-relaxed mb-6 h-8 line-clamp-2">

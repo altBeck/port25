@@ -77,7 +77,7 @@ const Work = () => {
     
                     <div className="bg-[#052429] rounded-b-3xl p-5 md:p-6">
                       <Link
-                        href="/puplar"
+                        href="/p/puplar"
                         className="inline-block bg-white text-gray-900 px-5 md:px-6 py-2.5 md:py-3 rounded-full font-semibold font-manrope text-sm md:text-base hover:bg-gray-100 transition-colors"
                       >
                         View Project
@@ -169,7 +169,7 @@ const Work = () => {
 
                     <div className="bg-[#1A1335] rounded-b-3xl p-5 md:p-6">
                       <Link
-                        href="/dash"
+                        href="/p/dash"
                         className="inline-block bg-white text-gray-900 px-5 md:px-6 py-2.5 md:py-3 rounded-full font-semibold font-manrope text-sm md:text-base hover:bg-gray-100 transition-colors"
                       >
                         View Project

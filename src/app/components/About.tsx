@@ -4,7 +4,7 @@ import Capabilities from "./Capabilities";
 
 const About = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center p-5 lg:p-16 px-8 md:px-16 pb-12 md:pb-16 pt-8 xl:max-w-350 mx-auto">
+    <section className="w-full min-h-screen flex flex-col justify-center p-5 lg:p-16 md:px-16 pb-12 md:pb-16 pt-8 xl:max-w-350 mx-auto">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between">
         {/* Left: Text */}
         <div className="flex-1">
