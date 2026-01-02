@@ -28,6 +28,20 @@ const defaultProjects: ProjectItem[] = [
 ];
 
 export default function ProjectFooter({ projects = defaultProjects, activeProjectId = "puplar" }: Props) {
+  const [copied, setCopied] = useState(false);
+  const email = "drkannobeck@gmail.com";
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      // Reset the "Copied" state after 2 seconds
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy!", err);
+    }
+  };
+
   return (
     // Removed overflow-hidden and w-full constraints that were breaking the layout
     <footer className="w-full bg-[#0B1214] text-[#D1D5D6] py-16 md:py-24 font-sans">
@@ -94,60 +108,82 @@ export default function ProjectFooter({ projects = defaultProjects, activeProjec
 
           <div className="flex flex-col gap-8 items-start">
             <div className="flex flex-wrap items-center gap-6 md:gap-10">
-              <Link href="/about" className="text-white font-semibold text-base flex items-center gap-2 hover:text-[#4CC9F0] transition-colors">
-                About Me <span className="text-lg">→</span>
-              </Link>
+              {/* About Me 
               
-              <a href="mailto:drkannobeck@gmail.com" className="text-white font-semibold text-base flex items-center gap-2 hover:text-[#4CC9F0] transition-colors">
-                drkannobeck@gmail.com
-                <Image
-                  src="/assets/icons/copy.svg"
-                  alt="copy icon"
-                  width={16}
-                  height={16}
-                />
-              </a>
+                <Link href="/about" className="text-white font-semibold text-base flex items-center gap-2 hover:text-[#4CC9F0] transition-colors">
+                  About Me <span className="text-lg">
+                    <Image
+                      src="/assets/icons/arrow-right.svg"
+                      alt="arrow right icon"
+                      width={16}
+                      height={16}
+                    />
+                  </span>
+                </Link>
+              
+              */}
+              
+              <button 
+                onClick={handleCopyEmail}
+                className="text-white font-semibold text-base flex items-center gap-2 hover:text-[#4CC9F0] transition-colors group relative"
+              >
+                {email}
+                <div className="relative">
+                   {copied ? (
+                     <span className="text-[#4CC9F0] text-xs absolute -top-8 left-1/2 -translate-x-1/2 bg-[#162629] px-2 py-1 rounded border border-[#233033] whitespace-nowrap">
+                       Copied!
+                     </span>
+                   ) : null}
+                   <Image
+                    src={copied ? "/assets/icons/check.svg" : "/assets/icons/copy.svg"} 
+                    alt="copy icon"
+                    width={16}
+                    height={16}
+                    className={copied ? "text-[#4CC9F0]" : ""}
+                  />
+                </div>
+              </button>
             </div>
 
-            <div className="w-full pt-8 mt-8 border-t border-[#1F292B] flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs text-[#5F6A6C] gap-4">
+            <div className="w-full pt-8 mt-8 border-t border-[#1F292B] flex flex-col sm:flex-row justify-between items-start sm:items-center text-sm text-[#5F6A6C] gap-4">
               <div className="flex w-full flex-col gap-5">
-                <span>Made with sleepless nights and procrastination</span>
-                <div className="flex items-center gap-2 opacity-80">
-                    <span>Designed using</span>
+                <span className="text-base">Made with sleepless nights and procrastination</span>
+                <div className="flex items-center gap-5 opacity-80">
+                    <span className="text-base">Designed using</span>
                     
-                    <div className="flex gap-2">
+                    <div className="flex gap-4">
                       {/* Simple circles for tool icons */}
                       <Image
                         src="/assets/icons/figma.svg"
                         alt="figma icon"
-                        width={20}
-                        height={20}
+                        width={24}
+                        height={24}
                       />
 
                       <Image
                         src="/assets/icons/nextjs.svg"
                         alt="nextjs icon"
-                        width={20}
-                        height={20}
+                        width={24}
+                        height={24}
                       />
 
                       <Image
                         src="/assets/icons/tailwind.svg"
                         alt="tailwind icon"
-                        width={20}
-                        height={20}
+                        width={24}
+                        height={24}
                       />
 
                       <Image
                         src="/assets/icons/cursor.svg"
                         alt="cursor icon"
-                        width={20}
-                        height={20}
+                        width={24}
+                        height={24}
                       />
                     </div>
                 </div>
               </div>
-              <div>©2026</div>
+              <div className="text-base">© 2026</div>
             </div>
           </div>
         </div>
@@ -194,9 +230,9 @@ function MobileCarousel({ projects, activeProjectId }: { projects: ProjectItem[]
             <div className="w-full max-w-[380px] bg-[#162629] rounded-[24px] overflow-hidden border border-[#233033] flex flex-col @2xs:h-[540px] @xs:h-[630px] transition-all duration-300">
                 
                 {/* Image Section */}
-                <div className="flex-1 relative bg-linear-to-b from-[#1E3033] to-[#162629] flex items-end justify-center">
+                <div className="relative flex-1 aspect-4/3 bg-linear-to-b from-[#1E3033] to-[#162629] flex items-end justify-center overflow-hidden">
                   {p.image ? (
-                    <div className="relative w-full h-full">
+                    <div className="relative w-full h-full ">
                       <Image 
                         src={p.image} 
                         alt={p.name} 
@@ -206,30 +242,34 @@ function MobileCarousel({ projects, activeProjectId }: { projects: ProjectItem[]
                       />
                     </div>
                   ) : (
-                    <span className="text-white/20 mb-10">No Preview</span>
+                    <div className="h-full flex items-center justify-center">
+                      <span className="text-white/20 text-sm font-medium">No Preview</span>
+                    </div>
                   )}
                 </div>
 
                 {/* Info Section */}
                 <div className="p-5 py-6 bg-[#162629]">
-                    <div className="flex justify-between items-baseline mb-1">
-                      <h3 className="text-white text-lg font-bold tracking-wide">{p.name}</h3>
-                      <span className="text-[#5F6A6C] text-xs font-medium">{p.year}</span>
-                    </div>
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-white text-2xl font-bold tracking-tight leading-tight">{p.name}</h3>
+                    <span className="text-[#5F6A6C] text-sm font-medium">{p.year}</span>
+                  </div>
                     
-                    <div className="flex gap-2 text-[10px] text-[#7A8385] uppercase tracking-wider mb-2 font-medium">
-                      <span>{p.domain}</span>
-                    </div>
-
-                    <p className="text-[#949A9C] text-xs leading-relaxed mb-6 h-8 line-clamp-2">
-                       {p.platform} • {p.problemType}
+                  <div className="flex flex-col gap-1">
+                    <span className="text-[#b0c1c9] text-sm font-bold uppercase tracking-wide">
+                    {p.domain}
+                    </span>
+                    <p className="text-[#949A9C] text-xs font-medium tracking-wide">
+                    {p.platform}
                     </p>
+                    <span className="pt-2 pb-5">{p.problemType}</span>
+                  </div>
 
-                    <Link 
-                      href={`/projects/${p.id}`}
-                      className="w-full bg-[#F0F2F2] text-[#0B1214] font-bold text-sm h-12 rounded-full flex items-center justify-center gap-2 hover:bg-white transition"
+                  <Link 
+                    href={`/p/${p.id}`}
+                    className="w-full bg-[#F0F2F2] text-[#0B1214] font-bold text-sm h-12 rounded-full flex items-center justify-center gap-2 hover:bg-white transition"
                     >
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                         VIEW PROJECT
                     </Link>
                 </div>
